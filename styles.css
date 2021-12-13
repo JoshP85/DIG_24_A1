@@ -1,6 +1,12 @@
+@font-face {
+    font-family: BakbakOne-Regular;
+    src: url(./fonts/BakbakOne-Regular.ttf);
+  }
+
 * {
     box-sizing: border-box;
 }
+
 html {
     position: relative;
     min-height: 100%;
@@ -8,47 +14,88 @@ html {
 }
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.container{
-    display: flex;
-    justify-content: center;
+
+header {
+    text-align: center;
+
+ }
+ h1 {
+     font-family: BakbakOne-Regular;
+     font-size: 90px;
+ }
+
+nav.menu {
+    margin: auto;
+    width: 900px;
+    min-width: 23rem;
+    background-color: #333;
+    text-align: center;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
+
     padding: 0;
     overflow: hidden;
     background-color: #333;
+}
 
-  }
-  
-  li {
-    float: left;
-    align-items: center;
-  }
-  
-  li a {
-    display: block;
+li {
+    display: inline;
+    list-style-type: none;
+
+}
+
+li a {
+    display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 20px;
     text-decoration: none;
-  }
-  
-  li a:hover {
+    font-family: BakbakOne-Regular;
+    font-size: 20px;
+
+}
+
+li a:hover {
     background-color: #111;
-  }
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+}
 
-
-.index{
+.main {
     background-color: white;
-    width: 60%;
+    width: 900px;
     height: 500px;
     min-width: 23rem;
     margin: auto;
     padding: 25px;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
+    box-shadow: 0 1.25rem 1.75rem rgba(0, 0, 0, .1);
+}
+
+.home,
+.hardware,
+.software,
+.periperals,
+.network,
+.accessories {
+    text-align: center;
+    display: none;
+}
+.home:target,
+.hardware:target,
+.software:target,
+.periperals:target,
+.network:target,
+.accessories:target {
+    text-align: center;
+    display: block;
 }
