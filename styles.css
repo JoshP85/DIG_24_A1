@@ -1,7 +1,7 @@
 @font-face {
     font-family: BakbakOne-Regular;
     src: url(./fonts/BakbakOne-Regular.ttf);
-  }
+}
 
 * {
     box-sizing: border-box;
@@ -22,11 +22,12 @@ body {
 header {
     text-align: center;
 
- }
- h1 {
-     font-family: BakbakOne-Regular;
-     font-size: 90px;
- }
+}
+
+h1 {
+    font-family: BakbakOne-Regular;
+    font-size: 90px;
+}
 
 nav.menu {
     margin: auto;
@@ -39,7 +40,6 @@ nav.menu {
 ul {
     list-style-type: none;
     margin: 0;
-
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -64,6 +64,7 @@ li a {
 
 li a:hover {
     background-color: #111;
+    transition: background-color 0.6s ease;
 }
 
 .container {
@@ -86,16 +87,32 @@ li a:hover {
 .software,
 .periperals,
 .network,
-.accessories {
+.accessories,
+.result {
     text-align: center;
     display: none;
 }
+
 .home:target,
 .hardware:target,
 .software:target,
 .periperals:target,
 .network:target,
-.accessories:target {
+.accessories:target,
+.result:target {
     text-align: center;
     display: block;
+}
+
+.button{
+    font-family: BakbakOne-Regular;
+    font-size: 18px;
+    height: 35px;
+    background-color: lightblue;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
+}
+
+.button:hover{
+    background-color: lightcyan;
+    transition: background-color 0.6s ease;
 }
