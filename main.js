@@ -2,21 +2,22 @@
 //     console.log("Clicked");
 //   });
 
-
-    // When a navigation property in the menu is clicked, this function gets the id of the menu item that triggered the event 
-    // and loops through all divs with the class name 'div-item' to find a matching id name, once found,
-    // it removes the 'display-none' from the class name which shows the div on screen to the user,
-    // while also hiding all other divs with the class name 'div-item' by adding 'display-none' to their class name.
+// Navigation functionality for menu - When a menu item is clicked, this function will get the id of the menu item that 
+// triggered the event, it will then loop through all divs with the class name of 'div-item'. All divs that do not
+// have an id matching the event will have their class names appended with 'display-none' which will hide them from view.
+// Once a matching id is found, the corresponding class name of the div will have 'display-none' removed 
+// and the div will be shown.
+// With help from https://stackoverflow.com/questions/55603456/a-simple-way-to-show-one-div-and-hide-all-others
 window.onload = function(){
     const menuItems = document.querySelectorAll('.menu-item');
-    const divs = document.querySelectorAll('.div-item');
+    const divItems = document.querySelectorAll('.div-item');
   
-    const hide = function(evt){
-      divs.forEach(function(d){
-         if(evt.target.getAttribute('id') != d.getAttribute('id')) d.classList.add('display-none');
-         else d.classList.remove('display-none');
+    const setDisplay = function(event){
+      divItems.forEach(function(div){
+         if(event.target.getAttribute('id') != div.getAttribute('id')) div.classList.add('display-none');
+         else div.classList.remove('display-none');
       });
     }
   
-    menuItems.forEach(function(d){ d.onclick = hide; })
+    menuItems.forEach(function(div){ div.onclick = setDisplay; })
   }
