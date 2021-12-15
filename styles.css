@@ -82,7 +82,7 @@ li a:hover {
     box-shadow: 0 1.25rem 1.75rem rgba(0, 0, 0, .1);
 }
 
-.home,
+/* .home,
 .hardware,
 .software,
 .periperals,
@@ -102,7 +102,7 @@ li a:hover {
 .result:target {
     text-align: center;
     display: block;
-}
+} */
 
 .button{
     font-family: BakbakOne-Regular;
@@ -116,3 +116,7 @@ li a:hover {
     background-color: lightcyan;
     transition: background-color 0.6s ease;
 }
+
+.display-none{
+    display: none;
+ }
