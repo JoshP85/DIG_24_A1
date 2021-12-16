@@ -21,3 +21,34 @@ window.onload = function(){
   
     menuItems.forEach(function(div){ div.onclick = setDisplay; })
   }
+document.getElementById('network-adaptor');
+
+function myFunction(){
+  console.log("clicked");
+}
+
+function myFunction() {
+  //var x = parseInt(document.getElementById("network-adapter").value);
+  var y = parseInt(document.getElementById("router").value);
+  //var total = (x + y);
+  var total = 0;
+  total += y;
+  total = total || 0;
+  document.getElementById("result").innerText = total;
+  // if(total == isNaN){
+  //   document.getElementById("result").innerText = 0;
+  // }
+  // else{
+  //   document.getElementById("result").innerText = total;
+  // }
+}
+
+// function findTotal(){
+//   var arr = document.getElementsByName('qty');
+//   var tot=0;
+//   for(var i=0;i<arr.length;i++){
+//       if(parseInt(arr[i].value))
+//           tot += parseInt(arr[i].value);
+//   }
+//   document.getElementById('total').innerText = tot;
+// }

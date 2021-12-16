@@ -28,66 +28,270 @@
             </ul>
         </nav>
 
-        <div class="container">
-            <div class="main">
 
-                <div class="div-item" id="home">
-                    <div class="content">
-                        <h3>Home</h3>
-                    </div>
-                    <a><button class="button menu-item" id="hardware">Start</button></a>
+        <div class="main">
+
+            <div class="div-item" id="home">
+                <div class="content">
+                    <h3>Home</h3>
                 </div>
+                <a><button class="button menu-item" id="hardware">Start</button></a>
+            </div>
 
-                <div class="div-item display-none" id="hardware">
-                    <div class="content">
-                        <h3>Hardware</h3>
-                    </div>
+            <div class="div-item display-none" id="hardware">
+                <div>
+                    <h3>Hardware</h3>
+                    <p>Add the hardware you will need.</p>
+                </div>
+                <div class="content">
+                    <form>
+                        <ul class="wrapper">
+                            <li class="form-row">
+                                <label for="cpu">Processor (CPU)</label>
+                                <input type="text" id="cpu">
+                            </li>
+                            <li class="form-row">
+                                <label for="cpu-cooler">CPU Cooler</label>
+                                <input type="text" id="cpu-cooler">
+                            </li>
+                            <li class="form-row">
+                                <label for="gpu">Graphics Card (GPU)</label>
+                                <input type="text" id="gpu">
+                            </li>
+                            <li class="form-row">
+                                <label for="memory">Memory (RAM)</label>
+                                <input type="text" id="memory">
+                            </li>
+                            <li class="form-row">
+                                <label for="motherboard">Motherboard</label>
+                                <input type="text" id="motherboard">
+                            </li>
+                            <li class="form-row">
+                                <label for="storage">Storage</label>
+                                <input type="text" id="storage">
+                            </li>
+                            <li class="form-row">
+                                <label for="psu">Power Supply</label>
+                                <input type="text" id="psu">
+                            </li>
+                            <li class="form-row">
+                                <label for="case">Case</label>
+                                <input type="text" id="case">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div>
                     <a><button class="button menu-item" id="home">Previous</button></a>
                     <a><button class="button menu-item" id="software">Next</button></a>
                 </div>
+            </div>
 
-                <div class="div-item display-none" id="software">
-                    <div class="content">
-                        <h3>Software</h3>
-                    </div>
+            <div class="div-item display-none" id="software">
+                <div>
+                    <h3>Software</h3>
+                    <p>Add the software you will need.</p>
+                </div>
+                <div class="content">
+
+                    <form>
+                        <ul class="wrapper">
+                            <li class="form-row">
+                                <label for="os">Operating System</label>
+                                <input type="text" id="os">
+                            </li>
+                            <li class="form-row">
+                                <label for="anti-virus">Internet Security</label>
+                                <input type="text" id="anti-virus">
+                            </li>
+                            <li class="form-row">
+                                <label for="office">Office</label>
+                                <input type="text" id="office">
+                            </li>
+                            <li class="form-row">
+                                <label for="adobe">Image/Video Editing</label>
+                                <input type="text" id="adobe">
+                            </li>
+                            <li class="form-row">
+                                <label for="vpn">Virtual Private Network (VPN)</label>
+                                <input type="text" id="vpn">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div>
                     <a><button class="button menu-item" id="hardware">Previous</button></a>
                     <a><button class="button menu-item" id="periperals">Next</button></a>
                 </div>
+            </div>
 
-                <div class="div-item display-none" id="periperals">
-                    <div class="content">
-                        <h3>Periperals</h3>
-                    </div>
+            <div class="div-item display-none" id="periperals">
+                <div>
+                    <h3>Periperals</h3>
+                    <p>Add the periperals you will need.</p>
+                </div>
+                <div class="content">
+
+                    <form>
+                        <ul class="wrapper">
+                            <li class="form-row">
+                                <label for="keyboard">Keyboard</label>
+                                <input type="text" id="keyboard">
+                            </li>
+                            <li class="form-row">
+                                <label for="mouse">Mouse</label>
+                                <input type="text" id="mouse">
+                            </li>
+                            <li class="form-row">
+                                <label for="monitor">Monitor</label>
+                                <input type="text" id="monitor">
+                            </li>
+                            <li class="form-row">
+                                <label for="speakers">Speakers</label>
+                                <input type="text" id="speakers">
+                            </li>
+                            <li class="form-row">
+                                <label for="webcam">Webcam</label>
+                                <input type="text" id="webcam">
+                            </li>
+                            <li class="form-row">
+                                <label for="headphones">Headphones</label>
+                                <input type="text" id="headphones">
+                            </li>
+                            <li class="form-row">
+                                <label for="printer">Printer/Scanner</label>
+                                <input type="text" id="printer">
+                            </li>
+                            <li class="form-row">
+                                <label for="card-reader">Card Reader/USB Hub</label>
+                                <input type="text" id="card-reader">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div>
                     <a><button class="button menu-item" id="software">Previous</button></a>
                     <a><button class="button menu-item" id="network">Next</button></a>
                 </div>
+            </div>
 
-                <div class="div-item display-none" id="network">
-                    <div class="content">
-                        <h3>Network</h3>
-                    </div>
+
+
+            <div class="div-item display-none" id="network">
+                <div>
+                    <h3>Network</h3>
+                    <p>Add the network devices you will need.</p>
+                </div>
+                <div class="content">
+
+                    <form>
+                        <ul class="wrapper">
+                            <li class="form-row">
+                                <label for="network-adapter">Network Adapter</label>
+                                <input type="text" id="network-adapter">
+                            </li>
+                            <li class="form-row">
+                                <label for="router">Router/Modem</label>
+                                <input type="text" id="router">
+                            </li>
+                            <li class="form-row">
+                                <label for="cables">Network Cables</label>
+                                <input type="text" id="cables">
+                            </li>
+                            <li class="form-row">
+                                <label for="switch">Switch</label>
+                                <input type="text" id="switch">
+                            </li>
+                            <li class="form-row">
+                                <label for="access-point">Access Points</label>
+                                <input type="text" id="access-point">
+                            </li>
+                            <li class="form-row">
+                                <label for="eop">Ethernet Over Power</label>
+                                <input type="text" id="eop">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div>
                     <a><button class="button menu-item" id="periperals">Previous</button></a>
                     <a><button class="button menu-item" id="accessories">Next</button></a>
                 </div>
+            </div>
 
-                <div class="div-item display-none" id="accessories">
-                    <div class="content">
-                        <h3>Accessories</h3>
-                    </div>
-                    <a><button class="button menu-item" id="network">Previous</button></a>
-                    <a></a><button class="button menu-item" id="result">Show Result</button></a>
+
+
+            <div class="div-item display-none" id="accessories">
+                <div>
+                    <h3>Accessories</h3>
+                    <p>Add the accessories you will need.</p>
                 </div>
-                <div class="div-item display-none" id="result">
-                    <div class="content">
-                        <h3>Result</h3>
-                    </div>
+                <div class="content">
+
+                    <form>
+                        <ul class="wrapper">
+                            <li class="form-row">
+                                <label for="os">Case Fans</label>
+                                <input type="text" id="os">
+                            </li>
+                            <li class="form-row">
+                                <label for="anti-virus">Fan Controllers</label>
+                                <input type="text" id="anti-virus">
+                            </li>
+                            <li class="form-row">
+                                <label for="anti-virus">LED Lighting</label>
+                                <input type="text" id="anti-virus">
+                            </li>
+                            <li class="form-row">
+                                <label for="office">Optical Drives</label>
+                                <input type="text" id="office">
+                            </li>
+                            <li class="form-row">
+                                <label for="adobe">Mouse Pad</label>
+                                <input type="text" id="adobe">
+                            </li>
+                            <li class="form-row">
+                                <label for="vpn">Game Controller</label>
+                                <input type="text" id="vpn">
+                            </li>
+                            <li class="form-row">
+                                <label for="vpn">VR Headset</label>
+                                <input type="text" id="vpn">
+                            </li>
+                            <li class="form-row">
+                                <label for="furniture">Furniture (desk, chair, foot rest)</label>
+                                <input type="text" id="furniture">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div>
+                    <a><button class="button menu-item" id="network">Previous</button></a>
+                    <a></a><button class="button menu-item" id="result">Calculate</button></a>
+                </div>
+            </div>
+
+
+
+            <div class="div-item display-none" id="result">
+                <div>
+                    <h3>Result</h3>
+                </div>
+                <div class="content">
+
+                </div>
+                <div>
                     <a><button class="button menu-item" id="accessories">Previous</button></a>
                     <a><button class="button menu-item" id="home">Start Over</button></a>
                 </div>
             </div>
+
+
+
         </div>
+
     </div>
-    
+
     <script src="main.js"></script>
 </body>
 
