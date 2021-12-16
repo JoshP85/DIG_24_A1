@@ -52,3 +52,14 @@ function myFunction() {
 //   }
 //   document.getElementById('total').innerText = tot;
 // }
+
+function calculate(){
+  var inputsArr = document.querySelectorAll('.user-input');
+  var total = 0;
+  for (var x = 0; x < inputsArr.length; x++){
+    if(parseFloat(inputsArr[x].value)){
+      total += (parseFloat(inputsArr[x].value))
+    }
+  }
+  document.getElementById('total').innerText = total.toFixed(2);
+}
