@@ -27,6 +27,7 @@ window.onload = function () {
 function calculate() {
   // Get all expense fields that were presented to the user
   var expensesArr = document.querySelectorAll('.expense-input');
+
   // Get the original balance inputted by the user
   var balance = document.querySelector('.balance-input').value;
 
@@ -52,12 +53,31 @@ function calculate() {
   netResult(balance, total);
 
   calculateAverage(total, totalItems);
+
+  calculateSubTotals();
+}
+
+
+function calculateSubTotals() {
+  const categories = ["hardware", "software", "periperals", "network", "accessories"];
+
+  for (var x = 0; x < categories.length; x++) {
+    var subtotal = 0;
+    var categoryArr = document.querySelectorAll('.expense-input.' + categories[x]);
+    for (var i = 0; i < categoryArr.length; i++) {
+      if (parseFloat(categoryArr[i].value) > 0) {
+        subtotal += (parseFloat(categoryArr[i].value));
+      }
+    }
+    document.getElementById(categories[x] + '-subtotal').innerText = subtotal.toFixed(2);
+  }
 }
 
 // Calculate the average cost of all expenses
 function calculateAverage(total, totalItems) {
 
   let avg = total / totalItems;
+  avg = avg || 0;
   document.getElementById('avg-cost').innerText = avg.toFixed(2);
 }
 
@@ -77,5 +97,4 @@ function netResult(balance, total) {
   } else {
     document.getElementById('net-result').style.color = "green";
   }
-
 }
