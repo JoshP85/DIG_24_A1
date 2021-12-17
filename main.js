@@ -8,41 +8,74 @@
 // Once a matching id is found, the corresponding class name of the div will have 'display-none' removed 
 // and the div will be shown.
 // With help from https://stackoverflow.com/questions/55603456/a-simple-way-to-show-one-div-and-hide-all-others
-window.onload = function(){
-    const menuItems = document.querySelectorAll('.menu-item');
-    const divItems = document.querySelectorAll('.div-item');
-  
-    const setDisplay = function(event){
-      divItems.forEach(function(div){
-         if(event.target.getAttribute('id') != div.getAttribute('id')) div.classList.add('display-none');
-         else div.classList.remove('display-none');
-      });
-    }
-  
-    menuItems.forEach(function(div){ div.onclick = setDisplay; })
+window.onload = function () {
+  const menuItems = document.querySelectorAll('.menu-item');
+  const divItems = document.querySelectorAll('.div-item');
+
+  const setDisplay = function (event) {
+    divItems.forEach(function (div) {
+      if (event.target.getAttribute('id') != div.getAttribute('id')) div.classList.add('display-none');
+      else div.classList.remove('display-none');
+    });
   }
-  
-function calculate(){
-  var inputsArr = document.querySelectorAll('.expense-input');
+
+  menuItems.forEach(function (div) {
+    div.onclick = setDisplay;
+  });
+}
+
+function calculate() {
+  // Get all expense fields that were presented to the user
+  var expensesArr = document.querySelectorAll('.expense-input');
+  // Get the original balance inputted by the user
   var balance = document.querySelector('.balance-input').value;
+
   var total = 0;
-  for (var x = 0; x < inputsArr.length; x++){
-    if(parseFloat(inputsArr[x].value)){
-      total += (parseFloat(inputsArr[x].value))
+  var totalItems = 0;
+
+  // Iterate over all the expense input fields
+  for (var x = 0; x < expensesArr.length; x++) {
+    // If a field has a value greater than 0, add the value to 'total'
+    // and increment 'totalItems' by 1
+    if (parseFloat(expensesArr[x].value) > 0) {
+      total += (parseFloat(expensesArr[x].value));
+      totalItems++;
     }
   }
 
-  var finalCal = balance - total;
-
+  // Used to avoid diisplaying NaN to user
+  balance = balance || 0;
+  // Display total cost of all items and orignal balance to user
   document.getElementById('total').innerText = total.toFixed(2);
   document.getElementById('balance').innerText = parseFloat(balance).toFixed(2);
-  document.getElementById('result').innerText = (finalCal).toFixed(2);
 
-  if(finalCal < 0){
-    document.getElementById('result').style.color = "red";
+  netResult(balance, total);
+
+  calculateAverage(total, totalItems);
+}
+
+// Calculate the average cost of all expenses
+function calculateAverage(total, totalItems) {
+
+  let avg = total / totalItems;
+  document.getElementById('avg-cost').innerText = avg.toFixed(2);
+}
+
+// Calculate the net result of all expanses against the original balance
+function netResult(balance, total) {
+
+  // Calculate the net result
+  let finalCal = balance - total;
+
+  // Display the net result to user
+  document.getElementById('net-result').innerText = (finalCal).toFixed(2);
+
+  // If the net result is minus funds - display the result in red,
+  // otherwise display the result in green
+  if (finalCal < 0) {
+    document.getElementById('net-result').style.color = "red";
+  } else {
+    document.getElementById('net-result').style.color = "green";
   }
-  else{
-    document.getElementById('result').style.color = "green";
-  }
- 
+
 }
