@@ -8,47 +8,93 @@
 // Once a matching id is found, the corresponding class name of the div will have 'display-none' removed 
 // and the div will be shown.
 // With help from https://stackoverflow.com/questions/55603456/a-simple-way-to-show-one-div-and-hide-all-others
-window.onload = function(){
-    const menuItems = document.querySelectorAll('.menu-item');
-    const divItems = document.querySelectorAll('.div-item');
-  
-    const setDisplay = function(event){
-      divItems.forEach(function(div){
-         if(event.target.getAttribute('id') != div.getAttribute('id')) div.classList.add('display-none');
-         else div.classList.remove('display-none');
-      });
-    }
-  
-    menuItems.forEach(function(div){ div.onclick = setDisplay; })
+window.onload = function () {
+  const menuItems = document.querySelectorAll('.menu-item');
+  const divItems = document.querySelectorAll('.div-item');
+
+  const setDisplay = function (event) {
+    divItems.forEach(function (div) {
+      if (event.target.getAttribute('id') != div.getAttribute('id')) div.classList.add('display-none');
+      else div.classList.remove('display-none');
+    });
   }
-document.getElementById('network-adaptor');
 
-function myFunction(){
-  console.log("clicked");
+  menuItems.forEach(function (div) {
+    div.onclick = setDisplay;
+  });
 }
 
-function myFunction() {
-  //var x = parseInt(document.getElementById("network-adapter").value);
-  var y = parseInt(document.getElementById("router").value);
-  //var total = (x + y);
+function calculate() {
+  // Get all expense fields that were presented to the user
+  var expensesArr = document.querySelectorAll('.expense-input');
+
+  // Get the original balance inputted by the user
+  var balance = document.querySelector('.balance-input').value;
+
   var total = 0;
-  total += y;
-  total = total || 0;
-  document.getElementById("result").innerText = total;
-  // if(total == isNaN){
-  //   document.getElementById("result").innerText = 0;
-  // }
-  // else{
-  //   document.getElementById("result").innerText = total;
-  // }
+  var totalItems = 0;
+
+  // Iterate over all the expense input fields
+  for (var x = 0; x < expensesArr.length; x++) {
+    // If a field has a value greater than 0, add the value to 'total'
+    // and increment 'totalItems' by 1
+    if (parseFloat(expensesArr[x].value) > 0) {
+      total += (parseFloat(expensesArr[x].value));
+      totalItems++;
+    }
+  }
+
+  // Used to avoid diisplaying NaN to user
+  balance = balance || 0;
+  // Display total cost of all items and orignal balance to user
+  document.getElementById('total').innerText = total.toFixed(2);
+  document.getElementById('balance').innerText = parseFloat(balance).toFixed(2);
+
+  netResult(balance, total);
+
+  calculateAverage(total, totalItems);
+
+  calculateSubTotals();
 }
 
-// function findTotal(){
-//   var arr = document.getElementsByName('qty');
-//   var tot=0;
-//   for(var i=0;i<arr.length;i++){
-//       if(parseInt(arr[i].value))
-//           tot += parseInt(arr[i].value);
-//   }
-//   document.getElementById('total').innerText = tot;
-// }
+
+function calculateSubTotals() {
+  const categories = ["hardware", "software", "periperals", "network", "accessories"];
+
+  for (var x = 0; x < categories.length; x++) {
+    var subtotal = 0;
+    var categoryArr = document.querySelectorAll('.expense-input.' + categories[x]);
+    for (var i = 0; i < categoryArr.length; i++) {
+      if (parseFloat(categoryArr[i].value) > 0) {
+        subtotal += (parseFloat(categoryArr[i].value));
+      }
+    }
+    document.getElementById(categories[x] + '-subtotal').innerText = subtotal.toFixed(2);
+  }
+}
+
+// Calculate the average cost of all expenses
+function calculateAverage(total, totalItems) {
+
+  let avg = total / totalItems;
+  avg = avg || 0;
+  document.getElementById('avg-cost').innerText = avg.toFixed(2);
+}
+
+// Calculate the net result of all expanses against the original balance
+function netResult(balance, total) {
+
+  // Calculate the net result
+  let finalCal = balance - total;
+
+  // Display the net result to user
+  document.getElementById('net-result').innerText = (finalCal).toFixed(2);
+
+  // If the net result is minus funds - display the result in red,
+  // otherwise display the result in green
+  if (finalCal < 0) {
+    document.getElementById('net-result').style.color = "red";
+  } else {
+    document.getElementById('net-result').style.color = "green";
+  }
+}
