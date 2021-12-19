@@ -10,7 +10,7 @@
 html {
     position: relative;
     min-height: 100%;
-    background-color: green;
+    background-color: lightgrey;
 }
 
 body {
@@ -28,8 +28,17 @@ h1 {
     font-family: BakbakOne-Regular;
     font-size: 90px;
 }
-h3, p{
-    margin:0;
+
+h3,
+p {
+    margin: 0;
+    font-family: BakbakOne-Regular;
+}
+
+h3 {
+    font-family: BakbakOne-Regular;
+    Font-size: 45px;
+    font-weight: lighter;
 }
 
 nav.menu {
@@ -84,13 +93,15 @@ li a:hover {
 .div-item {
     text-align: center;
     display: block;
-    
+
 }
-.content{
+
+.content {
     display: block;
-    height: 500px;
+    height: 460px;
     margin-top: 10px;
 }
+
 .button {
     font-family: BakbakOne-Regular;
     font-size: 18px;
@@ -113,16 +124,45 @@ li a:hover {
     list-style-type: none;
     padding: 0;
     border-radius: 3px;
-  }
-  .form-row {
+}
+
+.form-row {
     display: flex;
     justify-content: center;
     padding: .5em;
-  }
-  .form-row > label {
+}
+
+.form-row>label {
     padding: .5em 1em .5em 0;
     flex: 1;
-  }
-  .form-row > input {
+}
+
+.form-row>input {
     flex: 1;
+}
+
+
+
+.container {
+    display: flex;
+    height: 460px;
+
+}
+
+.row {
+    flex: 1;
+    height: 200px;
+    font-size: large;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
+}
+.row>p{
+    margin: 5px;
+}
+.col-sm-2 {
+    display: inline-block;
+    width: 40%;
+  }
+  .col-sm-10 {
+    display: inline-block;
+    width: 30.33333333%;
   }

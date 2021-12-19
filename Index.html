@@ -114,8 +114,8 @@
                                 <input class="expense-input software" type="text" id="office">
                             </li>
                             <li class="form-row">
-                                <label for="adobe">Image/Video Editing</label>
-                                <input class="expense-input software" type="text" id="adobe">
+                                <label for="editsw">Image/Video Editing</label>
+                                <input class="expense-input software" type="text" id="editsw">
                             </li>
                             <li class="form-row">
                                 <label for="vpn">Virtual Private Network (VPN)</label>
@@ -282,23 +282,31 @@
                 <div>
                     <h3>Result</h3>
                 </div>
-                <div class="content">
-                    <p>Total: <span id="total"></span></p>
-                    <p>Balance: <span id="balance"></span></p>
-                    <p>Net Result: <span id="net-result"></span></p>
-                    <p>Average Cost: <span id="avg-cost"></span></p>
-
-                    <p>Sub Totals</p>
-                    <p>Hardware <span id="hardware-subtotal"></span></p>
-                    <p>Software <span id="software-subtotal"></span></p>
-                    <p>Periperals <span id="periperals-subtotal"></span></p>
-                    <p>Network <span id="network-subtotal"></span></p>
-                    <p>Accessories <span id="accessories-subtotal"></span></p>
-
-
-
-
+                <div class="container">
+                    <div class="row">
+                        <p class="col-sm-2">Total:</p>
+                        <p class="col-sm-10" id="total"></p>
+                        <p class="col-sm-2">Balance: </p>
+                        <p class="col-sm-10" id="balance"></p>
+                        <p class="col-sm-2">Net Result: </p>
+                        <p class="col-sm-10" id="net-result"></p>
+                        <p class="col-sm-2">Average Cost:</p>
+                        <p class="col-sm-10" id="avg-cost"></p>
+                    </div>
+                    <div class="row">
+                        <p>Sub Totals</p>
+                        <p>Hardware <span id="hardware-subtotal"></span></p>
+                        <p>Software <span id="software-subtotal"></span></p>
+                        <p>Periperals <span id="periperals-subtotal"></span></p>
+                        <p>Network <span id="network-subtotal"></span></p>
+                        <p>Accessories <span id="accessories-subtotal"></span></p>
+    
+    
+    
+    
+                    </div>
                 </div>
+
                 <div>
                     <a><button class="button menu-item" id="accessories">Previous</button></a>
                     <a><button class="button menu-item" id="home">Start Over</button></a>
