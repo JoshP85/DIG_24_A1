@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-
+    <script src="main.js"></script>
     <title>Budget Calculator</title>
 </head>
 
@@ -15,20 +15,17 @@
             <h1>Can you afford a PC??</h1>
         </div>
     </header>
-
     <div>
         <nav class="menu">
             <ul>
-                <li><a class="menu-item" id="hardware">Hardware</a></li>
-                <li><a class="menu-item" id="software">Software</a></li>
-                <li><a class="menu-item" id="periperals">Periperals</a></li>
-                <li><a class="menu-item" id="network">Network</a></li>
-                <li><a class="menu-item" id="accessories">Accessories</a></li>
-                <li><a class="menu-item" id="home">Restart</a></li>
+                <li><a class="menu-item" onclick="showDiv('hardware')">Hardware</a></li>
+                <li><a class="menu-item" onclick="showDiv('software')">Software</a></li>
+                <li><a class="menu-item" onclick="showDiv('periperals')">Periperals</a></li>
+                <li><a class="menu-item" onclick="showDiv('network')">Network</a></li>
+                <li><a class="menu-item" onclick="showDiv('accessories')">Accessories</a></li>
+                <li><a class="menu-item" onclick="showDiv('home')">Restart</a></li>
             </ul>
         </nav>
-
-
         <div class="main">
 
             <div class="div-item" id="home">
@@ -39,8 +36,7 @@
                     <label for="user-balance">Balance</label>
                     <input class="balance-input" type="text" id="user-balance">
                 </div>
-
-                <a><button class="button menu-item" id="hardware">Start</button></a>
+                <button class="button menu-item" onclick="showDiv('hardware')">Start</button>
             </div>
 
             <div class="div-item display-none" id="hardware">
@@ -87,8 +83,8 @@
                     </form>
                 </div>
                 <div>
-                    <a><button class="button menu-item" id="home">Previous</button></a>
-                    <a><button class="button menu-item" id="software">Next</button></a>
+                    <button class="button menu-item" onclick="showDiv('home')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('software')">Next</button>
                 </div>
             </div>
 
@@ -125,8 +121,8 @@
                     </form>
                 </div>
                 <div>
-                    <a><button class="button menu-item" id="hardware">Previous</button></a>
-                    <a><button class="button menu-item" id="periperals">Next</button></a>
+                    <button class="button menu-item" onclick="showDiv('hardware')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('periperals')">Next</button>
                 </div>
             </div>
 
@@ -136,7 +132,6 @@
                     <p>Add the periperals you will need.</p>
                 </div>
                 <div class="content">
-
                     <form>
                         <ul class="wrapper">
                             <li class="form-row">
@@ -175,12 +170,10 @@
                     </form>
                 </div>
                 <div>
-                    <a><button class="button menu-item" id="software">Previous</button></a>
-                    <a><button class="button menu-item" id="network">Next</button></a>
+                    <button class="button menu-item" onclick="showDiv('software')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('network')">Next</button>
                 </div>
             </div>
-
-
 
             <div class="div-item display-none" id="network">
                 <div>
@@ -188,7 +181,6 @@
                     <p>Add the network devices you will need.</p>
                 </div>
                 <div class="content">
-
                     <form>
                         <ul class="wrapper">
                             <li class="form-row">
@@ -219,12 +211,10 @@
                     </form>
                 </div>
                 <div>
-                    <a><button class="button menu-item" id="periperals">Previous</button></a>
-                    <a><button class="button menu-item" id="accessories">Next</button></a>
+                    <button class="button menu-item" onclick="showDiv('periperals')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('accessories')">Next</button>
                 </div>
             </div>
-
-
 
             <div class="div-item display-none" id="accessories">
                 <div>
@@ -232,7 +222,6 @@
                     <p>Add the accessories you will need.</p>
                 </div>
                 <div class="content">
-
                     <form>
                         <ul class="wrapper">
                             <li class="form-row">
@@ -271,12 +260,11 @@
                     </form>
                 </div>
                 <div>
-                    <a><button class="button menu-item" id="network">Previous</button></a>
-                    <a onclick="calculate()"><button class="button menu-item" id="calculate">Calculate</button></a>
+                    <button class="button menu-item" onclick="showDiv('network')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('calculate')"
+                        onmousedown="calculate()">Calculate</button>
                 </div>
             </div>
-
-
 
             <div class="div-item display-none" id="calculate">
                 <div>
@@ -294,7 +282,7 @@
                         <p class="col-2" id="avg-cost"></p>
                     </div>
                     <div class="row">
-                        <p>Sub Totals</p></br>
+                        <p>Sub Totals</p><br />
                         <p class="col-1">Hardware</p>
                         <p class="col-2" id="hardware-subtotal"></p>
                         <p class="col-1">Software</p>
@@ -307,20 +295,13 @@
                         <p class="col-2" id="accessories-subtotal"></p>
                     </div>
                 </div>
-
                 <div>
-                    <a><button class="button menu-item" id="accessories">Previous</button></a>
-                    <a><button class="button menu-item" id="home">Start Over</button></a>
+                    <button class="button menu-item" onclick="showDiv('accessories')">Previous</button>
+                    <button class="button menu-item" onclick="showDiv('home')">Start Over</button>
                 </div>
             </div>
-
-
-
         </div>
-
     </div>
-
-    <script src="main.js"></script>
 </body>
 
 </html>
