@@ -151,18 +151,22 @@ li a:hover {
 
 .row {
     flex: 1;
-    height: 200px;
-    font-size: large;
+    height: 250px;
+    font-size: large;  
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
 }
-.row>p{
+
+.row>p {
     margin: 5px;
+    display: inline-block
 }
-.col-sm-2 {
-    display: inline-block;
-    width: 40%;
-  }
-  .col-sm-10 {
-    display: inline-block;
-    width: 30.33333333%;
-  }
+
+.col-1 {
+
+    width: 50%;
+}
+
+.col-2 {
+
+    width: 30%;
+}
