@@ -24,27 +24,17 @@ header {
 
 }
 
-h1 {
-    font-family: BakbakOne-Regular;
-    font-size: 90px;
-}
-
-h3,
-p {
-    margin: 0;
-    font-family: BakbakOne-Regular;
-}
-
-h3 {
-    font-family: BakbakOne-Regular;
-    Font-size: 45px;
-    font-weight: lighter;
+.main {
+    background-color: white;
+    width: 900px;
+    height: 650px;
+    min-width: 23rem;
+    margin: auto;
+    box-shadow: 0 1.25rem 1.75rem rgba(0, 0, 0, .1);
 }
 
 nav.menu {
     margin: auto;
-    width: 900px;
-    min-width: 23rem;
     background-color: #333;
     text-align: center;
 }
@@ -79,27 +69,44 @@ li a:hover {
 }
 
 
-
-.main {
-    background-color: white;
-    width: 900px;
-    height: 650px;
-    min-width: 23rem;
-    margin: auto;
-    padding: 25px;
-    box-shadow: 0 1.25rem 1.75rem rgba(0, 0, 0, .1);
-}
-
 .div-item {
     text-align: center;
     display: block;
 
 }
 
+.display-none {
+    display: none;
+}
+
+h1 {
+    font-family: BakbakOne-Regular;
+    font-size: 90px;
+}
+
+h3,
+p {
+    margin: 0;
+    font-family: BakbakOne-Regular;
+}
+
+h3 {
+    font-family: BakbakOne-Regular;
+    Font-size: 45px;
+    font-weight: lighter;
+}
+
 .content {
     display: block;
     height: 460px;
     margin-top: 10px;
+}
+
+label{
+    font-family: BakbakOne-Regular;
+}
+input{
+    
 }
 
 .button {
@@ -114,11 +121,6 @@ li a:hover {
     background-color: lightcyan;
     transition: background-color 0.6s ease;
 }
-
-.display-none {
-    display: none;
-}
-
 
 .wrapper {
     list-style-type: none;
@@ -141,8 +143,6 @@ li a:hover {
     flex: 1;
 }
 
-
-
 .container {
     display: flex;
     height: 460px;
@@ -152,7 +152,7 @@ li a:hover {
 .row {
     flex: 1;
     height: 250px;
-    font-size: large;  
+    font-size: large;
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
 }
 
