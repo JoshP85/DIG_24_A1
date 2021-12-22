@@ -2,8 +2,8 @@
 function showDiv(div, menuItem) {
   const divItems = document.querySelectorAll('.div-item');
   const menuItems = document.querySelectorAll('.menu-item');
-// Alters class names for menu items and divs depending on
-// selection by user
+  // Alters class names for menu items and divs depending on
+  // selection by user
   for (var x = 0; x < divItems.length; x++) {
     if (divItems[x].id != div) {
       divItems[x].classList.add('display-none');
@@ -20,11 +20,13 @@ function showDiv(div, menuItem) {
   }
 }
 
-function calculate() {
-  // Get all expense fields that were presented to the user
-  var expensesArr = document.querySelectorAll('.expense-input');
 
-  // Get the original balance inputted by the user
+
+// <------ Functions exclusive for results page ------>
+
+// Gets total expenses and how many item fields had costs inputted
+function calculate() {
+  var expensesArr = document.querySelectorAll('.expense-input');
   var balance = document.querySelector('.balance-input').value;
 
   var total = 0;
@@ -46,14 +48,15 @@ function calculate() {
   document.getElementById('total').innerText = "$" + total.toFixed(2);
   document.getElementById('balance').innerText = "$" + parseFloat(balance).toFixed(2);
 
-  netResult(balance, total);
+  calculateSubTotals();
 
   calculateAverage(total, totalItems);
 
-  calculateSubTotals();
+  netResult(balance, total);
 }
 
 
+// Get sub-totals of all expense categories
 function calculateSubTotals() {
   const categories = ["hardware", "software", "periperals", "network", "accessories"];
 
@@ -71,7 +74,6 @@ function calculateSubTotals() {
 
 // Calculate the average cost of all expenses
 function calculateAverage(total, totalItems) {
-
   let avg = total / totalItems;
   avg = avg || 0;
   document.getElementById('avg-cost').innerText = "$" + avg.toFixed(2);
@@ -86,8 +88,9 @@ function netResult(balance, total) {
   // Display the net result to user
   document.getElementById('net-result').innerText = "$" + (finalCal).toFixed(2);
 
-  // If the net result is minus funds - display the result in red,
-  // otherwise display the result in green
+  // If the net result is minus funds - 
+  // display the net result in red, display "sad" image and "bad" line of text.
+  // otherwise, display the net result in green, display "happy" image and "good" line of text
   if (finalCal < 0) {
     document.getElementById('net-result').style.color = "red";
     // Image sourced from
