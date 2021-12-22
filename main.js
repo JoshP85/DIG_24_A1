@@ -1,13 +1,23 @@
-function showDiv(div) {
+// Display current div and active menu item
+function showDiv(div, menuItem) {
   const divItems = document.querySelectorAll('.div-item');
-
-for(var x = 0; x<divItems.length; x++){
-  if(divItems[x].id != div){
-    divItems[x].classList.add('display-none');
-  }else{
-    divItems[x].classList.remove('display-none');
+  const menuItems = document.querySelectorAll('.menu-item');
+// Alters class names for menu items and divs depending on
+// selection by user
+  for (var x = 0; x < divItems.length; x++) {
+    if (divItems[x].id != div) {
+      divItems[x].classList.add('display-none');
+      for (var i = 0; i < menuItems.length; i++) {
+        if (menuItems[i].id != menuItem) {
+          menuItems[i].classList.remove('active');
+        } else {
+          menuItems[i].classList.add('active');
+        }
+      }
+    } else {
+      divItems[x].classList.remove('display-none');
+    }
   }
-}
 }
 
 function calculate() {
@@ -33,8 +43,8 @@ function calculate() {
   // Used to avoid diisplaying NaN to user
   balance = balance || 0;
   // Display total cost of all items and orignal balance to user
-  document.getElementById('total').innerText = total.toFixed(2);
-  document.getElementById('balance').innerText = parseFloat(balance).toFixed(2);
+  document.getElementById('total').innerText = "$" + total.toFixed(2);
+  document.getElementById('balance').innerText = "$" + parseFloat(balance).toFixed(2);
 
   netResult(balance, total);
 
@@ -55,7 +65,7 @@ function calculateSubTotals() {
         subtotal += (parseFloat(categoryArr[i].value));
       }
     }
-    document.getElementById(categories[x] + '-subtotal').innerText = subtotal.toFixed(2);
+    document.getElementById(categories[x] + '-subtotal').innerText = "$" + subtotal.toFixed(2);
   }
 }
 
@@ -64,7 +74,7 @@ function calculateAverage(total, totalItems) {
 
   let avg = total / totalItems;
   avg = avg || 0;
-  document.getElementById('avg-cost').innerText = avg.toFixed(2);
+  document.getElementById('avg-cost').innerText = "$" + avg.toFixed(2);
 }
 
 // Calculate the net result of all expanses against the original balance
@@ -74,13 +84,23 @@ function netResult(balance, total) {
   let finalCal = balance - total;
 
   // Display the net result to user
-  document.getElementById('net-result').innerText = (finalCal).toFixed(2);
+  document.getElementById('net-result').innerText = "$" + (finalCal).toFixed(2);
 
   // If the net result is minus funds - display the result in red,
   // otherwise display the result in green
   if (finalCal < 0) {
     document.getElementById('net-result').style.color = "red";
+    // Image sourced from
+    // https://memegenerator.net/instance/55786757/carol-beer-computer-says-no
+    document.getElementById('result-img').src = "images/sad-computer.jpg";
+    document.getElementById('result-desc').innerText = "Looks like your balance falls short";
+
   } else {
     document.getElementById('net-result').style.color = "green";
+    // Image sourced from 
+    // https://www.vecteezy.com/vector-art/2402452-cute-computer-pc-smile-icon-vector-illustration-design
+    document.getElementById('result-img').src = "images/happy-computer.png";
+    document.getElementById('result-desc').innerText = "Your balance is enough to cover the costs!";
+
   }
 }
