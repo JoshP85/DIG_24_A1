@@ -15,14 +15,11 @@ html {
 
 body {
     background-color: white;
-    /* width: 900px; */
     height: auto;
     min-width: 23rem;
     margin: auto;
     box-shadow: 0 1.25rem 1.75rem rgba(0, 0, 0, .1);
 }
-
-
 
 /* -------- Headings and paragraphs -------- */
 .header {
@@ -33,20 +30,19 @@ h1 {
     display: block;
     font-family: BakbakOne-Regular;
     font-size: 70px;
-    /* height: 200px; */
     text-align: center;
     margin: 0;
     color: white;
-    /* padding-top: 50px; */
 }
-#presents{
+
+#presents {
     color: white;
     margin: 0;
     padding-top: 50px;
-    /* padding-right: 50%; */
     font-size: 15px;
     text-align: center;
 }
+
 h3,
 p {
     margin: 0;
@@ -97,15 +93,14 @@ li a {
     font-family: BakbakOne-Regular;
     font-size: 20px;
     border-radius: 30px;
-
 }
 
 li a:hover {
     background-color: rgb(88, 88, 88);
     transition: background-color 0.6s ease;
-    
 }
-.active{
+
+.active {
     background-color: rgb(88, 88, 88);
 }
 
@@ -115,6 +110,7 @@ li a:hover {
     display: block;
     max-width: 900px;
     margin: auto;
+    min-height: 656px;
 }
 
 .display-none {
@@ -122,46 +118,54 @@ li a:hover {
 }
 
 .content {
-    display: block;
-    height: 460px;
+    display: inline-block;
+    height: 480px;
     margin-top: 10px;
 }
 
-/* -------- Next/Previous buttons -------- */
-.button {
-    font-family: BakbakOne-Regular;
-    font-size: 18px;
-    height: 35px;
-    background-color: lightblue;
-    margin: 20px;
-}
-
-.button:hover {
-    background-color: lightcyan;
-    transition: background-color 0.6s ease;
-}
 
 /* -------- Expense input forms -------- */
 .wrapper {
+
     list-style-type: none;
     padding: 0;
     border-radius: 3px;
+    justify-content: center;
 }
 
 .form-row {
     display: flex;
-    justify-content: center;
     padding: .5em;
+    flex: 1;
 }
 
 .form-row>label {
     font-family: BakbakOne-Regular;
-    padding: .5em 1em .5em 0;
-    flex: 1;
+    font-size: 16px;
+    padding: .5em 2em .5em 0;
+    flex: 2;
 }
 
 .form-row>input {
     flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: auto;
+}
+
+.balance{
+    padding-top: 70px;
+}
+.balance>label{
+    font-size: 25px;
+    font-weight: 100;
+}
+
+input:focus, input:hover, 
+textarea:focus, textarea:hover,
+select:focus, select:hover {
+border-color: black;
 }
 
 /* -------- Results page -------- */
@@ -180,7 +184,7 @@ li a:hover {
 .container {
     display: flex;
     justify-content: space-between;
-    height: 240px;
+    height: 260px;
 }
 
 .row {
@@ -197,11 +201,25 @@ li a:hover {
 }
 
 .col-1 {
-    
+
     width: 50%;
 }
 
 .col-2 {
 
     width: 30%;
+}
+
+/* -------- Next/Previous buttons -------- */
+.button {
+    font-family: BakbakOne-Regular;
+    font-size: 18px;
+    height: 35px;
+    background-color: lightblue;
+    margin: 20px;
+}
+
+.button:hover {
+    background-color: lightcyan;
+    transition: background-color 0.6s ease;
 }

@@ -20,7 +20,10 @@ function showDiv(div, menuItem) {
   }
 }
 
-
+// Reloads the site to clear all data and start again
+function startOver(){
+  location.reload();
+}
 
 // <------ Functions exclusive for results page ------>
 

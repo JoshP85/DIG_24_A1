@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
-    <title>Budget Calculator</title>
+    <title>Budget Calculator - PC</title>
 </head>
 
 <body>
@@ -22,19 +22,31 @@
             <li><a class="menu-item" id="per-active" onclick="showDiv('periperals', 'per-active')">Periperals</a></li>
             <li><a class="menu-item" id="net-active" onclick="showDiv('network', 'net-active')">Network</a></li>
             <li><a class="menu-item" id="acc-active" onclick="showDiv('accessories', 'acc-active')">Accessories</a></li>
-            <li><a class="menu-item" onclick="showDiv('home')">Restart</a></li>
+            <li><a class="menu-item" onclick="startOver()">Restart</a></li>
         </ul>
     </nav>
     <div class="div-item" id="home">
-        <div>
-            <h3>Home</h3>
-            <p>Enter your balance</p>
-        </div>
+
+        <h3>Home</h3>
         <div class="content">
-            <label for="user-balance">Balance</label>
-            <input class="balance-input" type="text" id="user-balance">
+            <div>
+
+                <p>Do you think you have enough for a new PC?</p>
+                <p>Let's find out...</p>
+                <p>Enter your balance to get started.</p>
+            </div>
+            <form>
+                <ul class="wrapper">
+                    <li class="form-row balance">
+                        <label for="user-balance">Balance</label>
+                        <input class="balance-input" type="text" id="user-balance">
+                    </li>
+                </ul>
+            </form>
         </div>
+    <div>
         <button class="button menu-item" onclick="showDiv('hardware', 'hw-active')">Start</button>
+    </div>
     </div>
 
     <div class="div-item display-none" id="hardware">
@@ -266,7 +278,10 @@
     <div class="div-item display-none" id="calculate">
         <div class="row-result">
             <h3>Net Result: <span id="net-result"></span></h3>
-            <img class="result-img" id="result-img" src="" alt="result image">
+            <!-- Image sourced form
+            https://www.salonlfc.com/en/image-not-found-2/ -->
+            <!-- This default image will only show if JS is broken -->
+            <img class="result-img" id="result-img" src="images/image-not-found.png" alt="result image">
             <p><span id="result-desc"></span></p>
         </div>
         <div class="container">
@@ -296,7 +311,7 @@
         </div>
         <div>
             <button class="button menu-item" onclick="showDiv('accessories', 'acc-active')">Previous</button>
-            <button class="button menu-item" onclick="showDiv('home')">Start Over</button>
+            <button class="button menu-item" onclick="startOver()">Start Over</button>
         </div>
     </div>
 </body>
