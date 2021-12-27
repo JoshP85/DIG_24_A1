@@ -5,313 +5,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-
-    <title>Budget Calculator</title>
+    <script src="main.js"></script>
+    <title>Budget Calculator - PC</title>
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Can you afford a PC??</h1>
-        </div>
-    </header>
-
-    <div>
+    <div class="header">
+        <p id="presents">Budget Calculator Presents...</p>
+        <h1>Can you afford a PC??</h1>
         <nav class="menu">
             <ul>
-                <li><a class="menu-item" id="hardware">Hardware</a></li>
-                <li><a class="menu-item" id="software">Software</a></li>
-                <li><a class="menu-item" id="periperals">Periperals</a></li>
-                <li><a class="menu-item" id="network">Network</a></li>
-                <li><a class="menu-item" id="accessories">Accessories</a></li>
-                <li><a class="menu-item" id="home">Restart</a></li>
+                <li>
+                    <a class="menu-item" id="hw-active" onclick="showDiv('hardware', 'hw-active')">Hardware</a>
+                </li>
+                <li>
+                    <a class="menu-item" id="sw-active" onclick="showDiv('software', 'sw-active')">Software</a>
+                </li>
+                <li>
+                    <a class="menu-item" id="per-active" onclick="showDiv('periperals', 'per-active')">Periperals</a>
+                </li>
+                <li>
+                    <a class="menu-item" id="net-active" onclick="showDiv('network', 'net-active')">Network</a>
+                </li>
+                <li>
+                    <a class="menu-item" id="acc-active" onclick="showDiv('accessories', 'acc-active')">Accessories</a>
+                </li>
+                <li>
+                    <a class="menu-item" onclick="startOver()">Restart</a>
+                </li>
             </ul>
         </nav>
+    </div>
+    <div class="div-item" id="home">
 
-
-        <div class="main">
-
-            <div class="div-item" id="home">
-                <div>
-                    <h3>Home</h3>
-                </div>
-                <div class="content">
-                    <label for="user-balance">Balance</label>
-                    <input class="balance-input" type="text" id="user-balance">
-                </div>
-
-                <a><button class="button menu-item" id="hardware">Start</button></a>
+        <h3>Welcome!</h3>
+        <div class="content">
+            <div>
+                <p>Do you think you have enough for a new PC?</p>
+                <p>Let's find out...</p>
+                <p>Enter your balance to get started.</p>
             </div>
-
-            <div class="div-item display-none" id="hardware">
-                <div>
-                    <h3>Hardware</h3>
-                    <p>Add the hardware you will need.</p>
-                </div>
-                <div class="content">
-                    <form>
-                        <ul class="wrapper">
-                            <li class="form-row">
-                                <label for="cpu">Processor (CPU)</label>
-                                <input class="expense-input hardware" type="text" id="cpu">
-                            </li>
-                            <li class="form-row">
-                                <label for="cpu-cooler">CPU Cooler</label>
-                                <input class="expense-input hardware" type="text" id="cpu-cooler">
-                            </li>
-                            <li class="form-row">
-                                <label for="gpu">Graphics Card (GPU)</label>
-                                <input class="expense-input hardware" type="text" id="gpu">
-                            </li>
-                            <li class="form-row">
-                                <label for="memory">Memory (RAM)</label>
-                                <input class="expense-input hardware" type="text" id="memory">
-                            </li>
-                            <li class="form-row">
-                                <label for="motherboard">Motherboard</label>
-                                <input class="expense-input hardware" type="text" id="motherboard">
-                            </li>
-                            <li class="form-row">
-                                <label for="storage">Storage</label>
-                                <input class="expense-input hardware" type="text" id="storage">
-                            </li>
-                            <li class="form-row">
-                                <label for="psu">Power Supply</label>
-                                <input class="expense-input hardware" type="text" id="psu">
-                            </li>
-                            <li class="form-row">
-                                <label for="case">Case</label>
-                                <input class="expense-input hardware" type="text" id="case">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="home">Previous</button></a>
-                    <a><button class="button menu-item" id="software">Next</button></a>
-                </div>
-            </div>
-
-            <div class="div-item display-none" id="software">
-                <div>
-                    <h3>Software</h3>
-                    <p>Add the software you will need.</p>
-                </div>
-                <div class="content">
-
-                    <form>
-                        <ul class="wrapper">
-                            <li class="form-row">
-                                <label for="os">Operating System</label>
-                                <input class="expense-input software" type="text" id="os">
-                            </li>
-                            <li class="form-row">
-                                <label for="anti-virus">Internet Security</label>
-                                <input class="expense-input software" type="text" id="anti-virus">
-                            </li>
-                            <li class="form-row">
-                                <label for="office">Office</label>
-                                <input class="expense-input software" type="text" id="office">
-                            </li>
-                            <li class="form-row">
-                                <label for="adobe">Image/Video Editing</label>
-                                <input class="expense-input software" type="text" id="adobe">
-                            </li>
-                            <li class="form-row">
-                                <label for="vpn">Virtual Private Network (VPN)</label>
-                                <input class="expense-input software" type="text" id="vpn">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="hardware">Previous</button></a>
-                    <a><button class="button menu-item" id="periperals">Next</button></a>
-                </div>
-            </div>
-
-            <div class="div-item display-none" id="periperals">
-                <div>
-                    <h3>Periperals</h3>
-                    <p>Add the periperals you will need.</p>
-                </div>
-                <div class="content">
-
-                    <form>
-                        <ul class="wrapper">
-                            <li class="form-row">
-                                <label for="keyboard">Keyboard</label>
-                                <input class="expense-input periperals" type="text" id="keyboard">
-                            </li>
-                            <li class="form-row">
-                                <label for="mouse">Mouse</label>
-                                <input class="expense-input periperals" type="text" id="mouse">
-                            </li>
-                            <li class="form-row">
-                                <label for="monitor">Monitor</label>
-                                <input class="expense-input periperals" type="text" id="monitor">
-                            </li>
-                            <li class="form-row">
-                                <label for="speakers">Speakers</label>
-                                <input class="expense-input periperals" type="text" id="speakers">
-                            </li>
-                            <li class="form-row">
-                                <label for="webcam">Webcam</label>
-                                <input class="expense-input periperals" type="text" id="webcam">
-                            </li>
-                            <li class="form-row">
-                                <label for="headphones">Headphones</label>
-                                <input class="expense-input periperals" type="text" id="headphones">
-                            </li>
-                            <li class="form-row">
-                                <label for="printer">Printer/Scanner</label>
-                                <input class="expense-input periperals" type="text" id="printer">
-                            </li>
-                            <li class="form-row">
-                                <label for="card-reader">Card Reader/USB Hub</label>
-                                <input class="expense-input periperals" type="text" id="card-reader">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="software">Previous</button></a>
-                    <a><button class="button menu-item" id="network">Next</button></a>
-                </div>
-            </div>
-
-
-
-            <div class="div-item display-none" id="network">
-                <div>
-                    <h3>Network</h3>
-                    <p>Add the network devices you will need.</p>
-                </div>
-                <div class="content">
-
-                    <form>
-                        <ul class="wrapper">
-                            <li class="form-row">
-                                <label for="network-adapter">Network Adapter</label>
-                                <input class="expense-input network" type="text" id="network-adapter">
-                            </li>
-                            <li class="form-row">
-                                <label for="router">Router/Modem</label>
-                                <input class="expense-input network" type="text" id="router">
-                            </li>
-                            <li class="form-row">
-                                <label for="cables">Network Cables</label>
-                                <input class="expense-input network" type="text" id="cables">
-                            </li>
-                            <li class="form-row">
-                                <label for="switch">Switch</label>
-                                <input class="expense-input network" type="text" id="switch">
-                            </li>
-                            <li class="form-row">
-                                <label for="access-point">Access Points</label>
-                                <input class="expense-input network" type="text" id="access-point">
-                            </li>
-                            <li class="form-row">
-                                <label for="eop">Ethernet Over Power</label>
-                                <input class="expense-input network" type="text" id="eop">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="periperals">Previous</button></a>
-                    <a><button class="button menu-item" id="accessories">Next</button></a>
-                </div>
-            </div>
-
-
-
-            <div class="div-item display-none" id="accessories">
-                <div>
-                    <h3>Accessories</h3>
-                    <p>Add the accessories you will need.</p>
-                </div>
-                <div class="content">
-
-                    <form>
-                        <ul class="wrapper">
-                            <li class="form-row">
-                                <label for="fans">Case Fans</label>
-                                <input class="expense-input accessories" type="text" id="fans">
-                            </li>
-                            <li class="form-row">
-                                <label for="fan-con">Fan Controllers</label>
-                                <input class="expense-input accessories" type="text" id="fan-con">
-                            </li>
-                            <li class="form-row">
-                                <label for="led">LED Lighting</label>
-                                <input class="expense-input accessories" type="text" id="led">
-                            </li>
-                            <li class="form-row">
-                                <label for="optical">Optical Drives</label>
-                                <input class="expense-input accessories" type="text" id="optical">
-                            </li>
-                            <li class="form-row">
-                                <label for="mouse-pad">Mouse Pad</label>
-                                <input class="expense-input accessories" type="text" id="mouse-pad">
-                            </li>
-                            <li class="form-row">
-                                <label for="controller">Game Controller</label>
-                                <input class="expense-input accessories" type="text" id="controller">
-                            </li>
-                            <li class="form-row">
-                                <label for="vr">VR Headset</label>
-                                <input class="expense-input accessories" type="text" id="vr">
-                            </li>
-                            <li class="form-row">
-                                <label for="furniture">Furniture (desk, chair, foot rest)</label>
-                                <input class="expense-input accessories" type="text" id="furniture">
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="network">Previous</button></a>
-                    <a onclick="calculate()"><button class="button menu-item" id="calculate">Calculate</button></a>
-                </div>
-            </div>
-
-
-
-            <div class="div-item display-none" id="calculate">
-                <div>
-                    <h3>Result</h3>
-                </div>
-                <div class="content">
-                    <p>Total: <span id="total"></span></p>
-                    <p>Balance: <span id="balance"></span></p>
-                    <p>Net Result: <span id="net-result"></span></p>
-                    <p>Average Cost: <span id="avg-cost"></span></p>
-
-                    <p>Sub Totals</p>
-                    <p>Hardware <span id="hardware-subtotal"></span></p>
-                    <p>Software <span id="software-subtotal"></span></p>
-                    <p>Periperals <span id="periperals-subtotal"></span></p>
-                    <p>Network <span id="network-subtotal"></span></p>
-                    <p>Accessories <span id="accessories-subtotal"></span></p>
-
-
-
-
-                </div>
-                <div>
-                    <a><button class="button menu-item" id="accessories">Previous</button></a>
-                    <a><button class="button menu-item" id="home">Start Over</button></a>
-                </div>
-            </div>
-
-
-
+            <form>
+                <ul>
+                    <li class="form-row balance">
+                        <label for="user-balance">Balance</label>
+                        <input class="balance-input" type="text" id="user-balance">
+                    </li>
+                </ul>
+            </form>
+            <button class="button menu-item" onclick="showDiv('hardware', 'hw-active')">Start</button>
         </div>
-
     </div>
 
-    <script src="main.js"></script>
+    <div class="div-item display-none" id="hardware">
+        <div>
+            <h3>Hardware</h3>
+            <p>Add the hardware you will need.</p>
+        </div>
+        <div class="content">
+            <form>
+                <ul>
+                    <li class="form-row">
+                        <label for="cpu">Processor (CPU)</label>
+                        <input class="expense-input hardware" type="text" id="cpu">
+                    </li>
+                    <li class="form-row">
+                        <label for="cpu-cooler">CPU Cooler</label>
+                        <input class="expense-input hardware" type="text" id="cpu-cooler">
+                    </li>
+                    <li class="form-row">
+                        <label for="gpu">Graphics Card (GPU)</label>
+                        <input class="expense-input hardware" type="text" id="gpu">
+                    </li>
+                    <li class="form-row">
+                        <label for="memory">Memory (RAM)</label>
+                        <input class="expense-input hardware" type="text" id="memory">
+                    </li>
+                    <li class="form-row">
+                        <label for="motherboard">Motherboard</label>
+                        <input class="expense-input hardware" type="text" id="motherboard">
+                    </li>
+                    <li class="form-row">
+                        <label for="storage">Storage</label>
+                        <input class="expense-input hardware" type="text" id="storage">
+                    </li>
+                    <li class="form-row">
+                        <label for="psu">Power Supply</label>
+                        <input class="expense-input hardware" type="text" id="psu">
+                    </li>
+                    <li class="form-row">
+                        <label for="case">Case</label>
+                        <input class="expense-input hardware" type="text" id="case">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('home')">Previous</button>
+            <button class="button menu-item" onclick="showDiv('software', 'sw-active')">Next</button>
+        </div>
+    </div>
+
+    <div class="div-item display-none" id="software">
+        <div>
+            <h3>Software</h3>
+            <p>Add the software you will need.</p>
+        </div>
+        <div class="content">
+
+            <form>
+                <ul>
+                    <li class="form-row">
+                        <label for="os">Operating System</label>
+                        <input class="expense-input software" type="text" id="os">
+                    </li>
+                    <li class="form-row">
+                        <label for="anti-virus">Internet Security</label>
+                        <input class="expense-input software" type="text" id="anti-virus">
+                    </li>
+                    <li class="form-row">
+                        <label for="office">Office</label>
+                        <input class="expense-input software" type="text" id="office">
+                    </li>
+                    <li class="form-row">
+                        <label for="editsw">Image/Video Editing</label>
+                        <input class="expense-input software" type="text" id="editsw">
+                    </li>
+                    <li class="form-row">
+                        <label for="vpn">Virtual Private Network</label>
+                        <input class="expense-input software" type="text" id="vpn">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('hardware', 'hw-active')">Previous</button>
+            <button class="button menu-item" onclick="showDiv('periperals', 'per-active')">Next</button>
+        </div>
+    </div>
+
+    <div class="div-item display-none" id="periperals">
+        <div>
+            <h3>Periperals</h3>
+            <p>Add the periperals you will need.</p>
+        </div>
+        <div class="content">
+            <form>
+                <ul>
+                    <li class="form-row">
+                        <label for="keyboard">Keyboard</label>
+                        <input class="expense-input periperals" type="text" id="keyboard">
+                    </li>
+                    <li class="form-row">
+                        <label for="mouse">Mouse</label>
+                        <input class="expense-input periperals" type="text" id="mouse">
+                    </li>
+                    <li class="form-row">
+                        <label for="monitor">Monitor</label>
+                        <input class="expense-input periperals" type="text" id="monitor">
+                    </li>
+                    <li class="form-row">
+                        <label for="speakers">Speakers</label>
+                        <input class="expense-input periperals" type="text" id="speakers">
+                    </li>
+                    <li class="form-row">
+                        <label for="webcam">Webcam</label>
+                        <input class="expense-input periperals" type="text" id="webcam">
+                    </li>
+                    <li class="form-row">
+                        <label for="headphones">Headphones</label>
+                        <input class="expense-input periperals" type="text" id="headphones">
+                    </li>
+                    <li class="form-row">
+                        <label for="printer">Printer/Scanner</label>
+                        <input class="expense-input periperals" type="text" id="printer">
+                    </li>
+                    <li class="form-row">
+                        <label for="card-reader">Card Reader/USB Hub</label>
+                        <input class="expense-input periperals" type="text" id="card-reader">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('software', 'sw-active')">Previous</button>
+            <button class="button menu-item" onclick="showDiv('network', 'net-active')">Next</button>
+        </div>
+    </div>
+
+    <div class="div-item display-none" id="network">
+        <div>
+            <h3>Network</h3>
+            <p>Add the network devices you will need.</p>
+        </div>
+        <div class="content">
+            <form>
+                <ul>
+                    <li class="form-row">
+                        <label for="network-adapter">Network Adapter</label>
+                        <input class="expense-input network" type="text" id="network-adapter">
+                    </li>
+                    <li class="form-row">
+                        <label for="router">Router/Modem</label>
+                        <input class="expense-input network" type="text" id="router">
+                    </li>
+                    <li class="form-row">
+                        <label for="cables">Network Cables</label>
+                        <input class="expense-input network" type="text" id="cables">
+                    </li>
+                    <li class="form-row">
+                        <label for="switch">Switch</label>
+                        <input class="expense-input network" type="text" id="switch">
+                    </li>
+                    <li class="form-row">
+                        <label for="access-point">Access Points</label>
+                        <input class="expense-input network" type="text" id="access-point">
+                    </li>
+                    <li class="form-row">
+                        <label for="eop">Ethernet Over Power</label>
+                        <input class="expense-input network" type="text" id="eop">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('periperals', 'per-active')">Previous</button>
+            <button class="button menu-item" onclick="showDiv('accessories', 'acc-active')">Next</button>
+        </div>
+    </div>
+
+    <div class="div-item display-none" id="accessories">
+        <div>
+            <h3>Accessories</h3>
+            <p>Add the accessories you will need.</p>
+        </div>
+        <div class="content">
+            <form>
+                <ul>
+                    <li class="form-row">
+                        <label for="fans">Case Fans</label>
+                        <input class="expense-input accessories" type="text" id="fans">
+                    </li>
+                    <li class="form-row">
+                        <label for="fan-con">Fan Controllers</label>
+                        <input class="expense-input accessories" type="text" id="fan-con">
+                    </li>
+                    <li class="form-row">
+                        <label for="led">LED Lighting</label>
+                        <input class="expense-input accessories" type="text" id="led">
+                    </li>
+                    <li class="form-row">
+                        <label for="optical">Optical Drives</label>
+                        <input class="expense-input accessories" type="text" id="optical">
+                    </li>
+                    <li class="form-row">
+                        <label for="mouse-pad">Mouse Pad</label>
+                        <input class="expense-input accessories" type="text" id="mouse-pad">
+                    </li>
+                    <li class="form-row">
+                        <label for="controller">Game Controller</label>
+                        <input class="expense-input accessories" type="text" id="controller">
+                    </li>
+                    <li class="form-row">
+                        <label for="vr">VR Headset</label>
+                        <input class="expense-input accessories" type="text" id="vr">
+                    </li>
+                    <li class="form-row">
+                        <label for="furniture">Furniture (desk, chair etc)</label>
+                        <input class="expense-input accessories" type="text" id="furniture">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('network', 'net-active')">Previous</button>
+            <button class="button menu-item" onclick="showDiv('calculate')" onmousedown="calculate()">Calculate</button>
+        </div>
+    </div>
+
+    <div class="div-item display-none" id="calculate">
+        <div class="row-result">
+            <h3>Net Result: <span id="net-result"></span></h3>
+            <!-- Image sourced form
+            https://www.salonlfc.com/en/image-not-found-2/ -->
+            <!-- This default image will only show if JS is broken -->
+            <img class="result-img" id="result-img" src="images/image-not-found.png" alt="result image">
+            <p><span id="result-desc"></span></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h4>Summary</h4>
+                <p class="col-1">Balance: </p>
+                <p class="col-2" id="balance"></p>
+                <p class="col-1">Total Cost:</p>
+                <p class="col-2" id="total"></p>
+
+                <p class="col-1">Average Cost:</p>
+                <p class="col-2" id="avg-cost"></p>
+            </div>
+            <div class="row">
+                <h4>Sub Totals</h4>
+                <p class="col-1">Hardware:</p>
+                <p class="col-2" id="hardware-subtotal"></p>
+                <p class="col-1">Software:</p>
+                <p class="col-2" id="software-subtotal"></p>
+                <p class="col-1">Periperals:</p>
+                <p class="col-2" id="periperals-subtotal"></p>
+                <p class="col-1">Network:</p>
+                <p class="col-2" id="network-subtotal"></p>
+                <p class="col-1">Accessories:</p>
+                <p class="col-2" id="accessories-subtotal"></p>
+            </div>
+        </div>
+        <div>
+            <button class="button menu-item" onclick="showDiv('accessories', 'acc-active')">Previous</button>
+            <button class="button menu-item" onclick="startOver()">Start Over</button>
+        </div>
+    </div>
 </body>
 
 </html>
