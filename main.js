@@ -21,7 +21,7 @@ function showDiv(div, menuItem) {
 }
 
 // Reloads the site to clear all data and start again
-function startOver(){
+function startOver() {
   location.reload();
 }
 
@@ -61,7 +61,7 @@ function calculate() {
 
 // Get sub-totals of all expense categories
 function calculateSubTotals() {
-  const categories = ["hardware", "software", "periperals", "network", "accessories"];
+  const categories = ["hardware", "software", "peripherals", "network", "accessories"];
 
   for (var x = 0; x < categories.length; x++) {
     var subtotal = 0;
@@ -75,12 +75,14 @@ function calculateSubTotals() {
   }
 }
 
+
 // Calculate the average cost of all expenses
 function calculateAverage(total, totalItems) {
   let avg = total / totalItems;
   avg = avg || 0;
   document.getElementById('avg-cost').innerText = "$" + avg.toFixed(2);
 }
+
 
 // Calculate the net result of all expanses against the original balance
 function netResult(balance, total) {
